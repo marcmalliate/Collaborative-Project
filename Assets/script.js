@@ -12,12 +12,11 @@ function getMarvelCharacter() {
         })
         .then(function (data) {
             console.log(data);
-            console.log(data.data.results[1].thumbnail.path)
+            console.log(data.data.results[1].thumbnail.path + "." + data.data.results[1].thumbnail.extension)
         })
 };
 
 getMarvelCharacter();
-
 
 
 function getGiphy() {
