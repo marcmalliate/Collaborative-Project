@@ -12,7 +12,7 @@ function getMarvelCharacter() {
         })
         .then(function (data) {
             console.log(data);
-            console.log(data.results[1].thumbnail.path)
+            console.log(data.data.results[1].thumbnail.path)
         })
 };
 
@@ -31,7 +31,7 @@ function getGiphy() {
         })
         .then(function (data) {
             console.log(data);
-            console.log(data[1].url);
+            console.log(data.data[1].url);
 
             for (i = 0; i<data.length; i++) {
                 var imgUrl = data[i].url;
