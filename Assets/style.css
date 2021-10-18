@@ -3,3 +3,23 @@
     margin: 0;
     padding: 0;
 }
+
+#cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.marvelCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    width: 300px;
+    height: auto;
+    border-radius: 10px;
+    padding: 1%;
+    margin: 2%;
+}
