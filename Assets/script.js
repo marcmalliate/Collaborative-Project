@@ -1,24 +1,61 @@
 console.log("test")
 var bodyEl = document.querySelector("body");
+var card1 = document.getElementById("1");
+var cardContainer = document.getElementById("cardContainer");
+
+
+for (i = 1; i<=20; i++) {
+    var card = document.createElement("div");
+    card.setAttribute("class", "marvelCard");
+    card.setAttribute("id", i);
+    bodyEl.appendChild(card);
+};
 
 function getMarvelCharacter() {
-    ApiKey = "a626e5d44818f075594e06593d461dce";
-    var requestUrl = "https://gateway.marvel.com:443/v1/public/characters?apikey=a626e5d44818f075594e06593d461dce";
+    var superHeroArray = ["Peter Parker", "Tony Stark", "thor", "loki", "captainamerica", "hulk", "thanos", "wolverine", "blackpanther", "natasharomanoff", "captainmarvel", "shuri", "groot", "gamora", "falcon", "blackwidow", "shangchi", "wandamaximoff", "mystique", "silversurfer"];
+    for (i = 0; i<20; i++) {
+    var apiKey = "a626e5d44818f075594e06593d461dce";
+    var requestUrl = "https://gateway.marvel.com:443/v1/public/characters?name=" + superHeroArray[i] + "&apikey=" + apiKey;
 
     fetch(requestUrl)
         .then(function (response) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
-            console.log(data.data.results[1].thumbnail.path + "." + data.data.results[1].thumbnail.extension)
+            console.log(data.data);
+            if (data.data) {
+            console.log(data.data.results[0].thumbnail.path + "." + data.data.results[0].thumbnail.extension)
+            
 
-            var imgUrl = data.data.results[1].thumbnail.path + "." + data.data.results[1].thumbnail.extension;
-            var img = document.createElement('img');
-            img.setAttribute("src", imgUrl);
-            img.setAttribute("width", 250);
-            bodyEl.appendChild(img);
+            // for (i = 1; i<=20; i++) {
+                var card = document.createElement("div");
+                var imgUrl = data.data.results[0].thumbnail.path + "." + data.data.results[0].thumbnail.extension;
+                var titleUrl = data.data.results[0].name;
+                var img = document.createElement('img');
+                var title = document.createElement('h2');
+                card.setAttribute("class", "marvelCard");
+                card.setAttribute("id", i);
+                img.setAttribute("src", imgUrl);
+                img.setAttribute("width", 250);
+                title.textContent = titleUrl;
+                cardContainer.appendChild(card);
+                card.appendChild(title);
+                card.appendChild(img);
+                
+            // };
+            // var imgUrl = data.data.results[0].thumbnail.path + "." + data.data.results[0].thumbnail.extension;
+            // // var titleUrl = data.data.results[0].name;
+            // var img = document.createElement('img');
+            // // var title = document.createElement('h2');
+            // img.setAttribute("src", imgUrl);
+            // img.setAttribute("width", 250);
+            // // title.textContent(titleUrl);
+            // bodyEl.appendChild(img);
+
+            }
         })
+
+}
 };
 
 getMarvelCharacter();
@@ -27,8 +64,8 @@ getMarvelCharacter();
 function getGiphy() {
     // superhero array to loop through
     for (i = 0; i<20; i++) {
-    var superHeroArray = ["spiderman", "ironman", "thor", "loki", "captainamceria", "hulk", "thanos", "wolverine", "blackpanther", "natasharomanoff", "captainmarvel", "shuri", "groot", "gamora", "falcon", "blackwidow", "shangchi", "wandamaximoff", "mystique", "silversurfer"];
     // var superHero = "ironman"
+    var superHeroArray = ["spiderman", "ironman", "thor", "loki", "captainamceria", "hulk", "thanos", "wolverine", "blackpanther", "natasharomanoff", "captainmarvel", "shuri", "groot", "gamora", "falcon", "blackwidow", "shangchi", "wandamaximoff", "mystique", "silversurfer"];
     var apiKey = "x0rZHGLHnNG2XixxUlW3r3Og3I6WVEvG"
     var requestUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + superHeroArray[i] + "&limit=20&offset=0&rating=g&lang=en";
 
@@ -54,4 +91,4 @@ function getGiphy() {
     
 }};
 
-getGiphy();
+// getGiphy();
