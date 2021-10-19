@@ -1,3 +1,5 @@
+
+
 console.log("test")
 var bodyEl = document.querySelector("body");
 var card1 = document.getElementById("1");
@@ -91,4 +93,15 @@ function getGiphy() {
     
 }};
 
+// // Mobile Menu
+// const burgerIcon = document.querySelector('burger');
+// const navbarMenu = document.querySelector('#nav-links');
+
+// burgerIcon.addEventListener('click', () =>{
+//     navbarMenu.classList.toggle('is-active');
+// });
+
+
+
 // getGiphy();
+
