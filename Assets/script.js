@@ -37,7 +37,6 @@ function getMarvelCharacter() {
                     card.setAttribute("id", data.data.results[0].name);
                     card.setAttribute("class", "marvelCard");
                     img.setAttribute("src", imgUrl);
-                    img.setAttribute("width", 250);
                     title.textContent = titleUrl;
                     cardContainer.appendChild(card);
                     card.appendChild(title);
@@ -53,6 +52,7 @@ var marvelCard = document.getElementsByClassName("marvelCard");
 
 
 cardContainer.addEventListener("click", function(event) {
+    if(event.path[1].id) {
     console.log(event);
     console.log(event.path[1].id);
     var superHero = event.path[1].id;
@@ -90,11 +90,7 @@ cardContainer.addEventListener("click", function(event) {
 
     getGiphy();
     
-})
-
-navItem.addEventListener("click", function (event){
-    window
-})
+}});
 
 
 // function getGiphy() {

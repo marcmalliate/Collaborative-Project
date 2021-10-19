@@ -44,10 +44,12 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 300px;
+    width: 30%;
     height: auto;
     border: 20px solid rgb(214, 32, 32);  
     border-radius: 15px; 
     margin: 3%
 }
+
+
 
