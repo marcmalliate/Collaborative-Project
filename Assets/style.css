@@ -1,5 +1,16 @@
+
+body {
+    font-family: 'Comic Neue', cursive;
+    color: gray;
+}
+
+.navbar-item {
+    font-family: 'Comic Neue', cursive;
+    font-size: 40px;
+
+}
+
 * {
-    font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -12,14 +23,15 @@
 }
 
 .marvelCard {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     align-items: center;
-    background-color: grey;
+    box-shadow: 2px gray;
+    background-color: rgb(214, 32, 32);
     width: 300px;
-    height: auto;
+    height: 300px;
     border-radius: 10px;
     padding: 1%;
     margin: 2%;
 }
+
