@@ -46,6 +46,7 @@ cardContainer.addEventListener("click", function (event) {
     console.log(event.path[1].id);
     var superHero = event.path[1].id;
 
+    if(superHero) {
     cardContainer.innerHTML = "";
 
     function getGiphy() {
@@ -79,4 +80,4 @@ cardContainer.addEventListener("click", function (event) {
 
     getGiphy();
 
-})
+}})
