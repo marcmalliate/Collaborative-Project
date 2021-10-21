@@ -5,7 +5,9 @@
 
 body {
     font-family: 'Comic Neue', cursive;
-    color: gray;
+    color: black;
+    font-size: 25px;
+    font-weight: 700;
 }
 
 .navbar-item {
