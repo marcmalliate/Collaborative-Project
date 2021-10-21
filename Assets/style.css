@@ -30,7 +30,7 @@ body {
     box-shadow: 2px gray;
     background-color: rgb(214, 32, 32);
     width: 300px;
-    height: 300px;
+    height: auto;
     border-radius: 15px;
     border: 20px;
     margin: 2%;
@@ -53,3 +53,10 @@ body {
     margin: 3%
 }
 
+.marvelCard:hover {
+    cursor: pointer;
+    border:yellow;
+    border-width: 15px;
+    border-style: solid;
+    opacity: 0.5;
+}
