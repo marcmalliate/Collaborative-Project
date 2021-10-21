@@ -1,5 +1,3 @@
-
-
 console.log("test")
 var bodyEl = document.querySelector("body");
 var card1 = document.getElementById("1");
@@ -36,7 +34,6 @@ function getMarvelCharacter() {
                     card.appendChild(img);
                 }
             })
-
     }
 };
 
@@ -44,7 +41,7 @@ getMarvelCharacter();
 var marvelCard = document.getElementsByClassName("marvelCard");
 
 
-cardContainer.addEventListener("click", function(event) {
+cardContainer.addEventListener("click", function (event) {
     console.log(event);
     console.log(event.path[1].id);
     var superHero = event.path[1].id;
@@ -55,17 +52,17 @@ cardContainer.addEventListener("click", function(event) {
 
         var apiKey = "x0rZHGLHnNG2XixxUlW3r3Og3I6WVEvG"
         var requestUrl = "https://api.giphy.com/v1/gifs/search?api_key=" + apiKey + "&q=" + superHero + "&limit=20&offset=0&rating=g&lang=en";
-    
-        
-            fetch(requestUrl)
-                .then(function (response) {
-                    return response.json();
-                })
-                .then(function (data) {
-                    for (i = 1; i <= 20; i++) {
+
+
+        fetch(requestUrl)
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                for (i = 1; i <= 20; i++) {
                     console.log(data);
                     console.log(data.data[i].images.original);
-    
+
                     var cardGif = document.createElement("div");
                     var gifUrl = data.data[i].images.original.url;
                     var gif = document.createElement('img');
@@ -74,15 +71,12 @@ cardContainer.addEventListener("click", function(event) {
                     gif.setAttribute("src", gifUrl);
                     giphyContainer.appendChild(cardGif);
                     cardGif.appendChild(gif);
-                    }
-                })
-    
-        
+                }
+            })
+
+
     };
 
     getGiphy();
-    
+
 })
-
-
-
