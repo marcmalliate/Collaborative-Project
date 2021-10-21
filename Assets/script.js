@@ -4,6 +4,7 @@ var card1 = document.getElementById("1");
 var cardContainer = document.getElementById("cardContainer");
 var giphyContainer = document.getElementById("giphyContainer");
 var navItem = document.getElementsByClassName("navbar-item");
+var intro = document.getElementById("intro");
 
 function getMarvelCharacter() {
     var superHeroArray = ["Thor", "Loki", "Captain America", "Hulk", "Thanos", "Wolverine", "Black Panther", "Groot", "Gamora", "Falcon", "Black Widow", "Storm", "Shang-Chi", "Beast", "Scarlet Witch", "Mystique", "Hawkeye", "Silver Surfer", "Professor X", "Magneto"];
@@ -37,16 +38,18 @@ function getMarvelCharacter() {
     }
 };
 
+
 getMarvelCharacter();
 var marvelCard = document.getElementsByClassName("marvelCard");
-
 
 cardContainer.addEventListener("click", function (event) {
     console.log(event);
     console.log(event.path[1].id);
     var superHero = event.path[1].id;
 
+    if(superHero) {
     cardContainer.innerHTML = "";
+    intro.innerHTML = "";
 
     function getGiphy() {
 
@@ -79,4 +82,4 @@ cardContainer.addEventListener("click", function (event) {
 
     getGiphy();
 
-})
+}})

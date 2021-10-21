@@ -15,6 +15,14 @@ body {
     font-size: 40px;
 }
 
+#intro {
+    text-align: center;
+    padding: 3%;
+    font-size: $size-3: 3rem;
+    $weight-medium;
+
+}
+
 #cardContainer {
     display: flex;
     flex-direction: row;
@@ -30,7 +38,7 @@ body {
     box-shadow: 2px gray;
     background-color: rgb(214, 32, 32);
     width: 300px;
-    height: 300px;
+    height: auto;
     border-radius: 15px;
     border: 20px;
     margin: 2%;
@@ -46,10 +54,27 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 300px;
+    width: 28%;
     height: auto;
+    background-color:rgb(214, 32, 32);
     border: 20px solid rgb(214, 32, 32);  
     border-radius: 15px; 
-    margin: 3%
+    margin: 1%
 }
 
+.marvelCard:hover {
+    cursor: pointer;
+    border:yellow;
+    border-width: 15px;
+    border-style: solid;
+    opacity: 0.5;
+}
+
+.giphyCard:hover {
+    cursor: pointer;
+    border:yellow;
+    border-width: 15px;
+    border-style: solid;
+    width: 32%;
+    height: auto;
+}
