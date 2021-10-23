@@ -84,7 +84,6 @@ cardContainer.addEventListener("click", function (event) {
         intro.innerHTML = "";
 
         getGiphy();
-
     }
 })
 
