@@ -88,7 +88,7 @@ body {
 }
 
 /* responsive desgined; when screen size <576px marvel cards and giphy display as single column with blue background */
-@media screen and (max-width: 576px) {
+@media screen and (max-width: 680px) {
     .marvelCard {
         width: 90%;
         height:auto;
@@ -99,5 +99,6 @@ body {
         width: 90%;
         height:auto;
         background-color: rgb(6, 9, 177);
+        border-color: rgb(6, 9, 177);
     }
 }
